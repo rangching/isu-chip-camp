@@ -22,7 +22,7 @@ export function Probe() {
         {lab ? <>
           <span className="chip electron">已測 {lab.tested ?? 0} 顆</span>
           <span className="chip output">判對 {lab.correct ?? 0} 顆</span>
-          {lab.yield !== undefined && <span className="chip field">良率 {Math.round((lab.yield ?? 0) * (lab.yield > 1 ? 1 : 100))}%</span>}
+          {lab.yield !== undefined && <span className="chip field">良率 {Math.round((lab.yield ?? 0) * 100)}%</span>}
           {(lab.scratches ?? 0) > 0 && <span className="chip error">刮傷 {lab.scratches} 次</span>}
         </> : <span className="muted small">開始量測後，成績會自動記到你的闖關護照。</span>}
       </div>

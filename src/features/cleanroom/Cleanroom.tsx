@@ -135,7 +135,7 @@ export function Cleanroom() {
         desc="對位 → 設參數 → 切割 → 顯微檢查。切太快會崩邊、偏太多會切到晶粒！" badge="營隊專屬工作站" />
       <div className="row" style={{ marginTop: 10 }}>
         {lab ? <>
-          {lab.yield !== undefined && <span className="chip output">良率 {Math.round(lab.yield > 1 ? lab.yield : lab.yield * 100)}%</span>}
+          {lab.yield !== undefined && <span className="chip output">良率 {Math.round(lab.yield)}%</span>}
           {lab.seconds !== undefined && <span className="chip electron">切割時間 {Math.round(lab.seconds)} 秒</span>}
           {lab.chippingUm !== undefined && <span className="chip hole">最大崩邊 {Math.round(lab.chippingUm)} µm</span>}
           {lab.attempts !== undefined && <span className="chip">第 {lab.attempts} 次</span>}

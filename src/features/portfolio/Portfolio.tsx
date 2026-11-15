@@ -96,8 +96,8 @@ export function Portfolio() {
           <h3>闖關紀錄</h3>
           <p>完成任務：{missions.filter((m) => p.done[m.id]).map((m) => m.label).join('、') || '（無）'}</p>
           <p>獲得徽章：{BADGES.filter((b) => p.badges[b.id]).map((b) => b.name).join('、') || '（無）'}　等級：{lv.name}（{p.xp} XP）</p>
-          {p.labs.probe?.yield !== undefined && <p>探針台量測：測 {p.labs.probe.tested} 顆，良率 {Math.round(p.labs.probe.yield > 1 ? p.labs.probe.yield : p.labs.probe.yield * 100)}%</p>}
-          {p.labs.dicing?.yield !== undefined && <p>晶圓切割：良率 {Math.round(p.labs.dicing.yield > 1 ? p.labs.dicing.yield : p.labs.dicing.yield * 100)}%</p>}
+          {p.labs.probe?.yield !== undefined && <p>探針台量測：測 {p.labs.probe.tested} 顆，良率 {Math.round(p.labs.probe.yield * 100)}%</p>}
+          {p.labs.dicing?.yield !== undefined && <p>晶圓切割：良率 {Math.round(p.labs.dicing.yield)}%</p>}
           <p>延伸學習：{['m11-04', 'm11-05', 'm12-04', 'm09-06'].map((u) => `${SERIES[u].code} ${SERIES[u].title}`).join('；')}</p>
           <p style={{ fontSize: '10pt', color: '#555' }}>本頁由「義起解密晶片」學習網站產生，供學習歷程使用，非正式研習證明；研習證明以營隊現場核發者為準。</p>
         </div>
